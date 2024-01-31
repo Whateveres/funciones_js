@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4_Colores2</title>
+</head>
+
+<body>
+
+    <div id="key" style="width: 200px; height: 200px; background-color: white; border:2px solid black;"></div>
+
+    <script>
+
+        //A)Definiendo variable global
+        let colorDiv = 'white';
+
+        //Agregando evento para escuchar teclas presionadas
+        document.addEventListener('keydown', function (event) {
+
+            //Definiendo variable 'div'
+            const div = document.getElementById('key');
+
+            //Cambiando color dependiendo de la letra del teclado
+            if (event.key === 'a') { //Sentencias condicionales if & else if
+                colorDiv = 'pink'; //rosado
+
+            } else if (event.key === 's') {
+                colorDiv = 'orange'; //naranja
+
+            } else if (event.key === 'd') {
+                colorDiv = 'lightblue';//celeste
+            }
+
+            //Actualizando el color a la variable
+            div.style.backgroundColor = colorDiv;
+
+        });
+
+        //B)Definiendo variable global
+        let colorDiv2 = 'white';
+
+        //Creando nuevo div siguiendo la misma lógica
+        const newDiv = document.createElement("div");
+
+        //Creando su id y estilo
+        newDiv.id = "key2"
+        newDiv.style.border = "2px solid black";
+        newDiv.style.width = "200px";
+        newDiv.style.height = "200px";
+
+        //Agregando el nuevo div al documento
+        const div2 = document.body
+        div2.appendChild(newDiv); //agregando el nuevo div al final del body
+
+        //Agregando evento para escuchar teclas presionadas
+        document.addEventListener('keydown', function (event) {
+
+            //Cambiando color
+            if (event.key === 'q') { //Sentencias condicionales if & else if
+                colorDiv2 = 'purple'; //morado
+
+            } else if (event.key === 'w') {
+                colorDiv2 = 'gray';//gris
+
+            } else if (event.key === 'e') {
+                colorDiv2 = 'brown';//café
+            }
+
+            //Actualizando el color a la variable
+            newDiv.style.backgroundColor = colorDiv2;
+        });
+
+    </script>
+</body>
+
+</html>
